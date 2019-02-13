@@ -34,7 +34,8 @@ class ViewNote extends Component {
                     <a href='' onClick={this.toggle}>delete</a>
                 </LinkContainer>
                 {this.props.notes.map(note => {
-                    if (this.props.match.params.id === note.id) {
+                    if (this.props.match.params.id === note.id.toString()) {
+                        console.log(note);
                         return (
                             <div key={note.id}>
                                 <SectionHeading>{note.title}</SectionHeading>
