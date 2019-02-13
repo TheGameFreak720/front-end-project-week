@@ -14,7 +14,7 @@ class EditNote extends Component {
 
     componentDidMount() {
         this.props.notes.map(note => {
-            if (this.props.match.params.id === note.id) {
+            if (this.props.match.params.id === note.id.toString()) {
               this.setState({ 
                   title: note.title, 
                   description: note.description 
