@@ -27,7 +27,6 @@ class ViewNote extends Component {
     };
 
     render() {
-        console.log(this.state.modal)
         return (
             <ViewNoteStyle>
                 <LinkContainer>

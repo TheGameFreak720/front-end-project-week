@@ -8,16 +8,16 @@ class EditNote extends Component {
         super();
         this.state = {
             title: '',
-            body: ''
+            description: ''
         }
     }
 
     componentDidMount() {
         this.props.notes.map(note => {
-            if (this.props.match.params.id === note._id) {
+            if (this.props.match.params.id === note.id) {
               this.setState({ 
                   title: note.title, 
-                  body: note.textBody 
+                  description: note.description 
               });
             }
           });
@@ -34,7 +34,7 @@ class EditNote extends Component {
 
         const note = {
             title: this.state.title,
-            textBody: this.state.body
+            description: this.state.description
         };
 
         this.props.editNote(id, note);
@@ -47,7 +47,7 @@ class EditNote extends Component {
                 <SectionHeading>Edit Note:</SectionHeading>
                 <form onSubmit={this.submitHandler}>
                     <TitleInput type="text" name="title" value={this.state.title} onChange={this.inputHandler} placeholder="Title"/>
-                    <BodyInput type="text" name="body" value={this.state.body} onChange={this.inputHandler} placeholder="Body"/>
+                    <BodyInput type="text" name="description" value={this.state.description} onChange={this.inputHandler} placeholder="Description"/>
                     <Button type="submit">Save</Button>
                 </form>
             </Form>
