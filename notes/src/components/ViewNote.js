@@ -35,7 +35,6 @@ class ViewNote extends Component {
                 </LinkContainer>
                 {this.props.notes.map(note => {
                     if (this.props.match.params.id === note.id.toString()) {
-                        console.log(note);
                         return (
                             <div key={note.id}>
                                 <SectionHeading>{note.title}</SectionHeading>

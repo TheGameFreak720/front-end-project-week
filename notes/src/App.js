@@ -59,6 +59,7 @@ class App extends Component {
           this.getNotes();
         })
         .catch(err => {
+          console.log(note);
           console.log('Error: Note wasn\'t edited')
         });
   };

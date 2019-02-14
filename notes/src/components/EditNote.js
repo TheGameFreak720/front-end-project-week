@@ -8,7 +8,8 @@ class EditNote extends Component {
         super();
         this.state = {
             title: '',
-            description: ''
+            description: '',
+            user_id: 0
         }
     }
 
@@ -17,7 +18,8 @@ class EditNote extends Component {
             if (this.props.match.params.id === note.id.toString()) {
               this.setState({ 
                   title: note.title, 
-                  description: note.description 
+                  description: note.description ,
+                  user_id: note.user_id
               });
             }
           });
@@ -34,7 +36,8 @@ class EditNote extends Component {
 
         const note = {
             title: this.state.title,
-            description: this.state.description
+            description: this.state.description,
+            user_id: this.state.user_id
         };
 
         this.props.editNote(id, note);
