@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 class Auth extends Component {
     render() {
-        <div>
-            <p>Authorization</p>
-        </div>
+        return (
+            <div>
+                <p>Authorization</p>
+            </div>
+        )
     }
 }
 

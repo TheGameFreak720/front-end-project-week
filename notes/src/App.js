@@ -8,17 +8,26 @@ import AppStyled from './Styles/App';
 import ViewNote from './components/ViewNote';
 import NewNote from './components/NewNote';
 import EditNote from './components/EditNote';
+import Auth from './components/Auth';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      notes: []
+      notes: [],
+      auth: false
     };
   }
 
   componentDidMount() {
-    this.getNotes();
+    const token = localStorage.getItem('jwt');
+
+    if(token !== null) {
+      this.setState({
+          auth: true
+      });
+      this.getNotes();
+    }
   }
 
   getNotes = () => {
@@ -64,18 +73,17 @@ class App extends Component {
         });
   };
 
-
-
   render() {
     return (
       <AppStyled>
-        <Route path='/' render={props => <Nav {...props} getNotes={this.getNotes} />} />
-        <Route exact path='/' render={props => <NoteContainer {...props} notes={this.state.notes} />} />
-        <Route path='/view-note/:id' render={props => <ViewNote {...props} notes={this.state.notes} deleteNote={this.deleteNote} />} />
-        <Route path='/create-note' render={props => <NewNote {...props} addNewNote={this.addNewNote} />} />
-        <Route path='/edit-note/:id' render={props => <EditNote {...props} notes={this.state.notes} editNote={this.editNote} />} />
+          <Route path='/' component={Auth} />
+          <Route path='/note' render={props => <Nav {...props} getNotes={this.getNotes} />} />
+          <Route exact path='/note' render={props => <NoteContainer {...props} notes={this.state.notes} />} />
+          <Route path='/note/view-note/:id' render={props => <ViewNote {...props} notes={this.state.notes} deleteNote={this.deleteNote} />} />
+          <Route path='/note/create-note' render={props => <NewNote {...props} addNewNote={this.addNewNote} />} />
+          <Route path='/note/edit-note/:id' render={props => <EditNote {...props} notes={this.state.notes} editNote={this.editNote} />} /> 
       </AppStyled>
-    );
+    )  
   }
 }
 
