@@ -23,14 +23,14 @@ class ViewNote extends Component {
     handleDelete = e => {
         e.preventDefault();
         this.props.deleteNote(this.props.match.params.id);
-        this.props.history.push('/');
+        this.props.history.push('/note');
     };
 
     render() {
         return (
             <ViewNoteStyle>
                 <LinkContainer>
-                    <Link to={`/edit-note/${this.props.match.params.id}`}>edit</Link>
+                    <Link to={`/note/edit-note/${this.props.match.params.id}`}>edit</Link>
                     <a href='' onClick={this.toggle}>delete</a>
                 </LinkContainer>
                 {this.props.notes.map(note => {

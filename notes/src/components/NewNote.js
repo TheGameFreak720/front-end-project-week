@@ -25,7 +25,7 @@ class NewNoteForm extends Component {
         };
 
         this.props.addNewNote(note);
-        this.props.history.push('/');
+        this.props.history.push('/note');
      }
 
     render() {

@@ -10,10 +10,10 @@ class Nav extends Component {
         return (
             <NavStyle>
                 <Title>Lambda Notes</Title>
-                <Link to='/' onClick={this.props.getNotes}>
+                <Link to='/note' onClick={this.props.getNotes}>
                     <Button>View Your Notes</Button>
                 </Link>
-                <Link to='/create-note'>
+                <Link to='/note/create-note'>
                     <Button>+Create New Note</Button>
                 </Link>
             </NavStyle>
