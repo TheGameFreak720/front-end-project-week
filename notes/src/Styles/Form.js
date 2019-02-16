@@ -41,3 +41,4 @@ export const Button = styled.button `
     width: 40%;
     height: 10%;
 `;
+
