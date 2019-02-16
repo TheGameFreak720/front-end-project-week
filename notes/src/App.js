@@ -9,6 +9,7 @@ import ViewNote from './components/ViewNote';
 import NewNote from './components/NewNote';
 import EditNote from './components/EditNote';
 import Register from './components/Register';
+import Login from './components/Login';
 
 class App extends Component {
   constructor() {
@@ -77,6 +78,7 @@ class App extends Component {
     return (
       <AppStyled>
           <Route exact path='/' component={Register} />
+          <Route exact path='/login' component={Login} />
           <Route path='/note' render={props => <Nav {...props} getNotes={this.getNotes} />} />
           <Route exact path='/note' render={props => <NoteContainer {...props} notes={this.state.notes} />} />
           <Route path='/note/view-note/:id' render={props => <ViewNote {...props} notes={this.state.notes} deleteNote={this.deleteNote} />} />

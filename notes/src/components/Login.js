@@ -5,7 +5,7 @@ import Logo from '../img/logo.png';
 import { BodyInput } from '../Styles/Form';
 import { AuthContainer, Form, Button, Title, SectionHeading } from '../Styles/Auth';
 
-class Register extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +32,7 @@ class Register extends Component {
                     <img src={Logo} alt='logo' />
                 </>
                 <Form onSubmit={this.handleSubmit}>
-                    <SectionHeading>Register: </SectionHeading>
+                    <SectionHeading>Login: </SectionHeading>
                     <label>
                         Name:
                         <BodyInput type="text" name='name' value={this.state.name} onChange={this.handleChange} />
@@ -48,7 +48,7 @@ class Register extends Component {
                     <Button type="submit">Submit</Button>
                 </Form>
                 <>
-                    <NavLink to="/login" style={{ textDecoration: 'none' }}>Have an account? Click this link to login</NavLink>
+                    <NavLink to="/" style={{ textDecoration: 'none' }}>Don't an account? Click this link to Register</NavLink>
                 </>
             </AuthContainer>
             
@@ -56,4 +56,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default Login;
