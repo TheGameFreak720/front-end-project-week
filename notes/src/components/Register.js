@@ -21,7 +21,7 @@ class Register extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
+        alert(this.state)
         const user = {
             name: this.state.name,
             email: this.state.email,
