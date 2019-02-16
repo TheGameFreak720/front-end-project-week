@@ -22,6 +22,8 @@ class Register extends Component {
     handleSubmit = (e) => {
         alert(this.state);
         e.preventDefault();
+
+        this.props.history.push('/note');
     }
 
     render() {
