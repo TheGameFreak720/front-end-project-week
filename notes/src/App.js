@@ -23,12 +23,14 @@ class App extends Component {
   componentDidMount() {
     const token = localStorage.getItem('jwt');
 
-    if(token !== null) {
-      this.setState({
-          auth: true
-      });
-      this.getNotes();
-    }
+    // if(token !== null) {
+    //   this.setState({
+    //       auth: true
+    //   });
+    //   this.getNotes();
+    // } delete comments when auth starts working
+
+    this.getNotes();
   }
 
   register = user => {
