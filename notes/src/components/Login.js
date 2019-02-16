@@ -43,10 +43,6 @@ class Login extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <SectionHeading>Login: </SectionHeading>
                     <label>
-                        Name:
-                        <BodyInput type="text" name='name' value={this.state.name} onChange={this.handleChange} />
-                    </label>
-                    <label>
                         Email:
                         <BodyInput type="email" name='email' value={this.state.email} onChange={this.handleChange} />
                     </label>
