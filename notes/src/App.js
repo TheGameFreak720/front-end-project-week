@@ -77,8 +77,8 @@ class App extends Component {
   render() {
     return (
       <AppStyled>
-          <Route exact path='/' component={Register} />
-          <Route exact path='/login' component={Login} />
+          <Route exact path='/' render={props => <Register {...props} />} />
+          <Route exact path='/login' render={props => <Login {...props} />}  />
           <Route path='/note' render={props => <Nav {...props} getNotes={this.getNotes} />} />
           <Route exact path='/note' render={props => <NoteContainer {...props} notes={this.state.notes} />} />
           <Route path='/note/view-note/:id' render={props => <ViewNote {...props} notes={this.state.notes} deleteNote={this.deleteNote} />} />
