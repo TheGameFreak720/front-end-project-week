@@ -20,9 +20,15 @@ class Register extends Component {
     }
 
     handleSubmit = (e) => {
-        alert(this.state);
         e.preventDefault();
 
+        const user = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        this.props.register(user);
         this.props.history.push('/note');
     }
 
