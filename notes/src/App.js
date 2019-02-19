@@ -23,7 +23,7 @@ class App extends Component {
 
   getNotes = () => {
     axios
-      .get('http://localhost:5000/note/get/all')
+      .get('https://lambda-notes-luis-alvarez.herokuapp.com/note/get/all')
       .then(res => {
         this.setState({ notes: res.data });
       })
@@ -34,7 +34,7 @@ class App extends Component {
 
   addNewNote = note => {
     axios
-      .post('http://localhost:5000/note/create', note)
+      .post('https://lambda-notes-luis-alvarez.herokuapp.com/note/create', note)
         .then(res => {
           this.getNotes();
         })
@@ -43,7 +43,7 @@ class App extends Component {
 
   deleteNote = id => {
     axios
-      .delete(`http://localhost:5000/note/delete/${id}`)
+      .delete(`https://lambda-notes-luis-alvarez.herokuapp.com/note/delete/${id}`)
       .then(res => {
         this.getNotes();
       })
@@ -54,7 +54,7 @@ class App extends Component {
 
   editNote = (id, note) => {
     axios
-      .put(`http://localhost:5000/note/edit/${id}`, note)
+      .put(`https://lambda-notes-luis-alvarez.herokuapp.com/note/edit/${id}`, note)
         .then(res => {
           this.getNotes();
         })
