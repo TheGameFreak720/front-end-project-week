@@ -41,7 +41,7 @@ class EditNote extends Component {
         };
 
         this.props.editNote(id, note);
-        this.props.history.push('/note');
+        this.props.history.push('/');
      }
 
     render() {

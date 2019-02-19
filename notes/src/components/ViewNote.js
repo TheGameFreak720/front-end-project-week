@@ -23,7 +23,7 @@ class ViewNote extends Component {
     handleDelete = e => {
         e.preventDefault();
         this.props.deleteNote(this.props.match.params.id);
-        this.props.history.push('/note');
+        this.props.history.push('/');
     };
 
     render() {
