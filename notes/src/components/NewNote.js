@@ -8,7 +8,7 @@ class NewNoteForm extends Component {
         super();
         this.state = {
             title: '',
-            body: ''
+            description: ''
         }
     }
 
@@ -21,7 +21,7 @@ class NewNoteForm extends Component {
 
         const note = {
             title: this.state.title,
-            textBody: this.state.body
+            description: this.state.body
         };
 
         this.props.addNewNote(note);
