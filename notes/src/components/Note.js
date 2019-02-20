@@ -24,7 +24,7 @@ class Notes extends Component {
 
     render() {
         return (
-            <Link to={`/note/view-note/${this.state.id}`} style={{ textDecoration: 'none' }} >
+            <Link to={`/view-note/${this.state.id}`} style={{ textDecoration: 'none' }} >
                 <Note onClick={this.selectNoteToView}>
                     <NoteHeading>{this.state.title}</NoteHeading>
                     <hr></hr>

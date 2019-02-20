@@ -30,8 +30,8 @@ class ViewNote extends Component {
         return (
             <ViewNoteStyle>
                 <LinkContainer>
-                    <Link to={`/note/edit-note/${this.props.match.params.id}`}>edit</Link>
-                    <a href='' onClick={this.toggle}>delete</a>
+                    <Link to={`/edit-note/${this.props.match.params.id}`}>edit</Link>
+                    <Link to='' onClick={this.toggle}>delete</Link>
                 </LinkContainer>
                 {this.props.notes.map(note => {
                     if (this.props.match.params.id === note.id.toString()) {
@@ -42,7 +42,7 @@ class ViewNote extends Component {
                                 <P>{note.description}</P>
                             </div>
                         );
-                    } 
+                    }
                 })} 
                 <ModalOption 
                     modal={this.state.modal}
